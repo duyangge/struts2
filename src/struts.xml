@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+			<!-- <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+				<package name="hellodemo" extends="struts-default" namespace="/">
+				name:访问名称 
+					<action name="hello" class="cn.itcast.action.HelloAction">
+					配置方法的返回值到页面 
+						<result name="Hello">/hello.jsp</result>
+					</action>
+				</package> -->
+<!--action访问 -->
+			<!-- <package name="methoddemo" extends="struts-default" namespace="/">
+			
+				<action name="addaction" class="cn.itcast.method.BookAction" method="add">
+				</action>
+				<action name="updateaction" class="cn.itcast.method.BookAction" method="update">
+				</action>
+			</package> -->
+<!--action访问通配符方式实现-->
+			<!-- <package name="methoddemo" extends="struts-default" namespace="/">
+					
+						name属性里面写符号*
+						1）执行action里面的add方法访问book_add,使用book_*可以匹配得到，*相当于变成add
+						两个路径都使用book_*可以匹配到
+						method属性写*值：{1}，表示第一个*。
+					 
+					<action name="book_*" class="cn.itcast.method.BookAction" method="{1}">
+					</action>
+				</package>  -->
+	
+<!--引入hello.xml配置文件  -->
+	<!-- <include file="cn/itcast/action/hello.xml"></include> -->
+	<!--结果页配置  -->
+<!--全局配置  -->
+			<!-- <package name="testdemo" extends="struts-default" namespace="/">
+				<global-results>
+					<result name="success">/hello.jsp</result>
+				</global-results>
+				<action name="User" class="cn.itcast.action.UserAction"></action>
+				<action name="Person" class="cn.itcast.action.PersonAction"></action>
+			</package> -->
+<!--局部配置  -->
+			<!-- 	 <package name="testdemo" extends="struts-default" namespace="/">
+					<global-results>
+						<result name="success">/hello.jsp</result>
+					</global-results>
+					<action name="User" class="cn.itcast.action.UserAction">
+						<result name="success">/User.jsp</result>
+					</action>
+					<action name="Person" class="cn.itcast.action.PersonAction">
+						<result name="success">/Person.jsp</result>
+					</action>
+				</package>  -->
+<!-- 结果页配置-type属性 -->
+			<!-- 	 <package name="testdemo" extends="struts-default" namespace="/">
+					<global-results>
+						<result name="success" type="redirect">/hello.jsp</result>
+					</global-results>
+					<action name="User" class="cn.itcast.action.UserAction"></action>
+					<action name="Person" class="cn.itcast.action.PersonAction"></action>
+				</package>  -->
+<!-- action之间的配置页面 -->
+		<!-- 	 <package name="testdemo" extends="struts-default" namespace="/">
+				<action name="User" class="cn.itcast.action.UserAction">
+					<result name="success" type="redirectAction">Person</result>
+				</action>
+				<action name="Person" class="cn.itcast.action.PersonAction">
+					<result name="success">/Person.jsp</result>
+				</action>
+			</package> -->
+<!--提交表单数据 -->
+		<!-- 	<package name="formdemo" extends="struts-default" namespace="/">
+				<action name="form1" class="cn.itcast.form.FormAction"></action>
+				<action name="form2" class="cn.itcast.form.FormAction2"></action>
+				<action name="form5" class="cn.itcast.form.FormAction5"></action>
+				
+				<action name="data1" class="cn.itcast.data.DataAction"></action>
+				<action name="data2" class="cn.itcast.data.Data2Action"></action>
+				<action name="data3" class="cn.itcast.data.Data3Action"></action>
+				
+				<action name="list" class="cn.itcast.data.ListAction"></action>
+				
+				<action name="map" class="cn.itcast.data.MapAction"></action>
+			</package>  -->
+<!--值栈对象  -->
+			<package name="ognldemo" extends="struts-default" namespace="/">
+				<action name="ognl1" class="cn.itcast.ognl.UserOgnlAction"></action>
+				<action name="valuestack" class="cn.itcast.ognl.ValueStackAction">
+					<result name="valuestack">/ValueStack.jsp</result>
+				</action>
+				<action name="objectdemo" class="cn.itcast.ognl.ObjectDemoAction">
+					<result name="success">/ValueStack.jsp</result>
+				</action>
+				<action name="listdemo" class="cn.itcast.ognl.ListDemoAction">
+					<result name="success">/ValueStack.jsp</result>
+				</action>
+				<action name="ognldemo1" class="cn.itcast.ognl.OgnlDemoAction">
+					<result name="success">/context.jsp</result>
+				</action>
+				
+			
+			</package>
+</struts>
